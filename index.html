@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RetroGram Messenger</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Экран входа -->
+    <div id="loginScreen" class="screen active">
+        <div class="login-box">
+            <h1 class="logo">RetroGram</h1>
+            <p class="tagline">Поделись моментом 💛</p>
+
+            <div class="tabs">
+                <button id="tabLogin" class="tab active">Вход</button>
+                <button id="tabRegister" class="tab">Регистрация</button>
+            </div>
+
+            <input type="text" id="usernameInput" placeholder="Логин" maxlength="20" autocomplete="username">
+            <input type="password" id="passwordInput" placeholder="Пароль" maxlength="40" autocomplete="current-password">
+
+            <label class="remember-label">
+                <input type="checkbox" id="rememberMe" checked>
+                <span>Запомнить меня</span>
+            </label>
+
+            <button id="submitBtn" class="btn-sepia">Войти</button>
+
+            <p id="authError" class="auth-error"></p>
+
+            <div class="film-strip"></div>
+        </div>
+    </div>
+
+    <!-- Основной чат -->
+    <div id="chatScreen" class="screen">
+        <header class="chat-header">
+            <button id="backBtn" class="back-btn">‹</button>
+            <div class="avatar" id="headerAvatar">📷</div>
+            <div class="header-info">
+                <h2 id="chatWith">Общий чат</h2>
+                <span id="statusText">онлайн</span>
+            </div>
+            <button id="logoutBtn" class="logout-btn" title="Выйти">⎋</button>
+        </header>
+
+        <div id="messages" class="messages"></div>
+
+        <div class="input-area">
+            <button id="filterBtn" class="filter-btn" title="Фильтр">🎨</button>
+            <input type="text" id="messageInput" placeholder="Сообщение..." maxlength="500">
+            <button id="sendBtn" class="send-btn">➤</button>
+        </div>
+
+        <!-- Панель фильтров -->
+        <div id="filterPanel" class="filter-panel">
+            <span data-filter="none">Оригинал</span>
+            <span data-filter="sepia">Сепия</span>
+            <span data-filter="vintage">Винтаж</span>
+            <span data-filter="bw">Ч/Б</span>
+            <span data-filter="warm">Тёплый</span>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
